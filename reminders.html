@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Frame">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <title>Reminders · Frame</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-title="Reminders">
+<!-- The header, tabs and name box are added by app.js. -->
+<main>
+<section>
+  <p class="muted">A reminder takes over the frame at its time. The frame can't make a sound or alert your phone, so it is only seen by someone looking at the frame.</p>
+  <form id="reminder-form" class="settings-form">
+    <label for="r-title">What</label>
+    <input id="r-title" maxlength="80" required placeholder="Take the bins out">
+    <label for="r-details">Details (optional)</label>
+    <input id="r-details" maxlength="300">
+    <div class="form-grid">
+      <div><label for="r-date">Date</label><input type="date" id="r-date" required></div>
+      <div><label for="r-time">Time</label><input type="time" id="r-time" required></div>
+    </div>
+    <div class="form-grid">
+      <div>
+        <label for="r-repeat">Repeat</label>
+        <select id="r-repeat">
+          <option value="none">Never</option>
+          <option value="daily">Every day</option>
+          <option value="weekly">Every week</option>
+          <option value="monthly">Every month</option>
+          <option value="yearly">Every year</option>
+        </select>
+      </div>
+      <div>
+        <label for="r-hold">Hold the screen for</label>
+        <select id="r-hold">
+          <option value="" data-fill-text="Default ({reminder_takeover_minutes} min)">Default</option>
+          <option value="5">5 minutes</option>
+          <option value="15">15 minutes</option>
+          <option value="60">1 hour</option>
+          <option value="180">3 hours</option>
+        </select>
+      </div>
+    </div>
+    <p class="meta" data-fill-text="Times are in the frame's time zone ({frame_tz}).">Times are in the frame's time zone.</p>
+    <button type="submit" class="primary wide" id="r-save">Add reminder</button>
+    <button type="button" class="wide" id="r-cancel" hidden>Cancel editing</button>
+  </form>
+</section>
+<section>
+  <h2>Coming up</h2>
+  <ul class="list" id="upcoming"></ul>
+  <p class="muted" id="upcoming-empty" hidden>Nothing scheduled.</p>
+</section>
+<section id="missed-section" hidden>
+  <h2>Missed</h2>
+  <ul class="list" id="missed"></ul>
+</section>
+</main>
+<script src="app.js"></script>
+<script src="reminders.js"></script>
+</body>
+</html>

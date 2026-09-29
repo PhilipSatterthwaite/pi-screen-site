@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Frame">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <title>Frame · Frame</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-title="Frame">
+<!-- The header, tabs and name box are added by app.js. -->
+<main>
+<section class="frame-card">
+  <img id="frame" alt="What the frame shows now">
+  <p class="muted" id="frame-empty" hidden>Nothing drawn yet.</p>
+</section>
+<section id="takeover" class="card takeover" hidden>
+  <p id="takeover-text"></p>
+  <button type="button" id="takeover-end">Back to normal</button>
+</section>
+<section>
+  <h2>Show</h2>
+  <div class="grid" id="modes"></div>
+  <button type="button" class="wide" id="refresh">Refresh now</button>
+</section>
+</main>
+<script src="app.js"></script>
+<script src="home.js"></script>
+</body>
+</html>

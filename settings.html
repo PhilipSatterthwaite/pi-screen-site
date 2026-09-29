@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Frame">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <title>Settings · Frame</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-title="Settings">
+<!-- The header, tabs and name box are added by app.js. -->
+<main>
+<section>
+  <h2>Screens</h2>
+  <p class="muted">Order, rotation in Auto, how often each screen redraws by itself, and each screen's options.</p>
+  <ul class="list" id="modes"></ul>
+  <button type="button" class="wide" id="rescan">Re-read InkyPi's screens</button>
+</section>
+<section>
+  <h2>Timing</h2>
+  <form id="settings-form" class="settings-form"></form>
+</section>
+<section>
+  <h2>About these pages</h2>
+  <p class="muted">They need Tailscale on this device. If this site can't reach the frame, the same pages are also on the frame itself at <a href="http://inkypi:8080/">http://inkypi:8080</a>.</p>
+</section>
+</main>
+<script src="app.js"></script>
+<script src="settings.js"></script>
+</body>
+</html>

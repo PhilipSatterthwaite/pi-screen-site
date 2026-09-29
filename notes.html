@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Frame">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <title>Notes · Frame</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-title="Notes">
+<!-- The header, tabs and name box are added by app.js. -->
+<main>
+<section>
+  <form id="note-form" class="settings-form">
+    <label for="note-body">New note</label>
+    <textarea id="note-body" maxlength="300" data-fill-attr="maxlength:max_note_chars" required placeholder="Write a note for the frame"></textarea>
+    <div class="row">
+      <span class="meta grow" id="note-count" data-fill-text="0 / {max_note_chars}">0 / 300</span>
+      <span class="meta">Emoji aren't shown on the frame.</span>
+    </div>
+    <label for="note-expires">Remove it after</label>
+    <select id="note-expires" data-fill-options="note_expiry_choices" data-selected="1 week">
+      <option value="1 week" selected>1 week</option>
+    </select>
+    <label class="check"><input type="checkbox" id="note-show-now"> Show it on the frame now</label>
+    <label class="check"><input type="checkbox" id="note-pinned"> Keep it at the top</label>
+    <button type="submit" class="primary wide" id="note-send">Send</button>
+  </form>
+</section>
+<section>
+  <h2>On the frame</h2>
+  <ul class="list" id="notes"></ul>
+  <p class="muted" id="notes-empty" hidden>No notes yet.</p>
+</section>
+</main>
+<script src="app.js"></script>
+<script src="notes.js"></script>
+</body>
+</html>

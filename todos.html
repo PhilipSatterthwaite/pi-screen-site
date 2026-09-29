@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Frame">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <title>Lists · Frame</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-title="Lists">
+<!-- The header, tabs and name box are added by app.js. -->
+<main>
+<section>
+  <div class="chips" id="list-tabs" role="tablist" aria-label="Lists"></div>
+</section>
+<section id="list-view" hidden>
+  <form id="add-form" class="row" autocomplete="off">
+    <input id="add-text" class="grow" maxlength="200" placeholder="Add an item" enterkeyhint="done" aria-label="New item">
+    <button type="submit" class="primary" id="add-button">Add</button>
+  </form>
+  <ul class="list todo" id="items"></ul>
+  <p class="muted" id="items-empty" hidden>Nothing here yet.</p>
+  <button type="button" class="wide" id="clear-done">Clear completed</button>
+  <h2>This list</h2>
+  <div class="row">
+    <button type="button" class="small" id="rename-list">Rename</button>
+    <button type="button" class="small" id="move-list-left">Move earlier</button>
+    <button type="button" class="small" id="move-list-right">Move later</button>
+    <button type="button" class="small danger" id="delete-list">Delete list</button>
+  </div>
+</section>
+<section>
+  <form id="new-list-form" class="row" autocomplete="off">
+    <input id="new-list-name" class="grow" maxlength="40" placeholder="New list name" aria-label="New list name">
+    <button type="submit">New list</button>
+  </form>
+</section>
+</main>
+<script src="app.js"></script>
+<script src="todos.js"></script>
+</body>
+</html>
