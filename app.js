@@ -11,7 +11,7 @@ const NAME_KEY = "piscreen.name";
 const POLL_MS = 5000;
 
 const TABS = [["index.html", "Frame"], ["notes.html", "Notes"], ["todos.html", "Lists"],
-  ["reminders.html", "Reminders"], ["photos.html", "Photos"], ["settings.html", "Settings"]];
+  ["reminders.html", "Reminders"], ["photos.html", "Photos"], ["lights.html", "Lights"], ["settings.html", "Settings"]];
 
 let pollTimer = null;
 const stateListeners = [];

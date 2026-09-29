@@ -106,3 +106,12 @@ main > section + section { margin-top: 20px; }
 /* A screen's options, opened from the Settings page */
 .screen-options { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line, #ddd); }
 .option-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 6px; }
+
+/* The Lights page */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: 10px; margin-bottom: 12px; }
+.swatch { aspect-ratio: 1; min-height: 0; padding: 0; border-radius: 50%; border: 2px solid var(--line); }
+.dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--line); flex: 0 0 auto; }
+input[type="range"].wide { width: 100%; }
+details summary { cursor: pointer; margin: 12px 0 6px; color: var(--muted); }
+/* Seven tabs: a smaller label on phone-width screens so "Reminders" isn't cut short */
+@media (max-width: 430px) { .tabs a { font-size: 11px; padding: 14px 0; } }

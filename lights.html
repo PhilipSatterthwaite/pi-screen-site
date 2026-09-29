@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Frame">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <title>Lights · Frame</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-title="Lights">
+<!-- The header, tabs and name box are added by app.js. -->
+<main>
+<section>
+  <div class="row">
+    <button type="button" class="grow" id="on">On</button>
+    <button type="button" class="grow" id="off">Off</button>
+  </div>
+  <label for="brightness" class="row"><span class="grow">Brightness</span><span id="brightness-value">10</span></label>
+  <input type="range" id="brightness" min="1" max="50" value="10" class="wide">
+</section>
+<section>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <label class="row" for="wheel"><span class="grow">Any colour</span><input type="color" id="wheel" value="#ff8800"></label>
+</section>
+<section>
+  <h2>Moving</h2>
+  <div class="grid" id="scenes"></div>
+</section>
+<section>
+  <h2>Automatic colours</h2>
+  <p class="muted">The frame changes the lights by itself at these moments, and they stay that colour afterwards.</p>
+  <p class="warning" id="not-set-up" hidden>Set the topic below first: it's the one your LED app uses.</p>
+  <label class="check"><input type="checkbox" id="lights-enabled"> Change the lights automatically</label>
+  <ul class="list" id="events"></ul>
+  <details>
+    <summary>Connection</summary>
+    <form class="settings-form" onsubmit="return false">
+      <label for="lights-topic">Topic</label>
+      <input id="lights-topic" autocomplete="off" placeholder="lakeside/…/cmd">
+      <label for="lights-broker">Broker</label>
+      <input id="lights-broker" autocomplete="off">
+      <label for="lights-port">Port</label>
+      <input id="lights-port" type="number" min="1" max="65535">
+    </form>
+  </details>
+</section>
+</main>
+<script src="app.js"></script>
+<script src="lights.js"></script>
+</body>
+</html>
