@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       box.value = "";
       updateCount();
-      document.getElementById("note-show-now").checked = false;
+      document.getElementById("note-show-now").checked = true;   // new notes pop up on the frame unless unticked
       document.getElementById("note-pinned").checked = false;
       toast(result.takeover ? "Sent. It will show on the frame shortly." : "Sent.");
       await loadNotes();
